@@ -40,4 +40,26 @@ public class LogFunctionsTest {
         double epsilon = 0.0001;
         assertThrows(ArithmeticException.class, () -> LogFunctions.log(x,1, epsilon));
     }
+
+    @ParameterizedTest(name = "{index}. Log2_Stub {0} is  defined")
+    @ValueSource(doubles = {
+        1
+    })
+    void test4(double x) {
+        double epsilon = 0.0001;
+        double result = LogFunctions.logStub(x, 2, epsilon);
+        double expected = Math.log(x)/Math.log(2);
+
+        assertEquals(expected, result, epsilon);
+    }
+
+    @ParameterizedTest(name = "{index}. Log2_Stub {0} is not defined")
+    @ValueSource(doubles = {
+        0, 
+        -1,
+    })
+    void test5(double x) {
+        double epsilon = 0.0001;
+        assertThrows(ArithmeticException.class, () -> LogFunctions.log(x,1, epsilon));
+    }
 }

@@ -28,9 +28,20 @@ public class LogFunctions {
     }
 
     public static double log(double x, double a, double eps) {
-        if (a==1){
+        if (a == 1){
             throw new ArithmeticException("Основание логарифма не может равняться 1");
         }
         return ln(x, eps) / ln(a, eps);
+    }
+
+
+    public static double logStub(double x, double a, double eps) {
+        if (a == 1 || x <= 0){
+            throw new ArithmeticException();
+        }
+        if (a == 2 && x == 1){
+            return 0;
+    }else
+        return 0;
     }
 }

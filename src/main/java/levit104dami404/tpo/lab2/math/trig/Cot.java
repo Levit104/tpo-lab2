@@ -1,15 +1,12 @@
 package levit104dami404.tpo.lab2.math.trig;
 
 import levit104dami404.tpo.lab2.math.general.Function;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 public class Cot implements Function {
     private final Sin sin;
     private final Cos cos;
-
-    public Cot(Sin sin, Cos cos) {
-        this.sin = sin;
-        this.cos = cos;
-    }
 
     @Override
     public double calculate(double x) {

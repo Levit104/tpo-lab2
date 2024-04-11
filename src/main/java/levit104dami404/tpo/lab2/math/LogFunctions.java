@@ -9,6 +9,8 @@ public class LogFunctions {
             throw new ArithmeticException("ln определен только для положительных чисел");
         }
 
+        
+
         double ln = 0;
         double term = (x - 1) / (x + 1);
         double tmp = term;
@@ -26,6 +28,9 @@ public class LogFunctions {
     }
 
     public static double log(double x, double a, double eps) {
+        if (a==1){
+            throw new ArithmeticException("Основание логарифма не может равняться 1");
+        }
         return ln(x, eps) / ln(a, eps);
     }
 }

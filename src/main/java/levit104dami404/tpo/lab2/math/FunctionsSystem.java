@@ -18,6 +18,8 @@ public class FunctionsSystem implements Function {
     public double calculate(double x) {
         if (x <= 0) {
             return cot.calculate(x);
+        } else if (x == 1) {
+            throw new ArithmeticException("Функция не определена при x=1");
         } else {
             double log10x = log10.calculate(x);
             double log3x = log3.calculate(x);
